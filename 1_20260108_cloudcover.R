@@ -1,5 +1,8 @@
 ####-- Cloudcover - January 12th, 2026
 
+# Clear environment if needed
+#rm(list=ls(all=TRUE))
+
 #install.packages(c("worldmet", "suncalc", "lubridate", "dplyr", "ggplot2"))
 library(worldmet)
 library(suncalc)
@@ -18,7 +21,7 @@ met_CVG <- import_ghcn_hourly("USW00093814", year = 2024, abbr_names = FALSE, ex
 # Save data in case package breaks
 #write.csv(met_CVG, "data/1_20260108_cvg.csv")
 
-# Save only cloud cover variables
+# Keep only cloud cover variables
 cloud_hr <- met_CVG %>% select(date, sky_cover) %>% rename(datetime_utc = date)
 
 
@@ -40,7 +43,7 @@ hours_utc <- seq(
 hours_est <- tibble(
     datetime_utc = hours_utc,
     datetime_est = with_tz(hours_utc, "America/New_York")) %>%
-    filter(year(datetime_est) == 2024)
+    filter(year(datetime_est) == 2024) 
 
 # Get sun position for CVG for 2024 (in UTC)
 sunpos <- getSunlightPosition(
@@ -65,7 +68,7 @@ sun_hr <- hours_est %>%
 # Left join dataframes in case of missing airport data
 cloud_sun <- sun_hr %>% left_join(cloud_hr, by = "datetime_utc")
 # Save data in case package breaks
-write.csv(cloud_sun, "data/1_20260108_cloudsun.csv")
+#write.csv(cloud_sun, "data/1_20260108_cloudsun.csv")
 
 # Filter out nighttime hours and NAs (minimal), 
 clouds_onlysunlight <- cloud_sun %>% 
@@ -76,7 +79,6 @@ clouds_onlysunlight <- cloud_sun %>%
 
 # Explore classes
 table(clouds_onlysunlight$sky_cover_08, useNA = "always")
-
 
 ############################ Graphing #######################################
 
@@ -103,15 +105,15 @@ p1 <- ggplot(cloud_graph, aes(x = sky_cover_factor, fill = sky_cover_factor)) +
         plot.title.position = "plot")   
 
 # Create binary cloud cover variable
-cloud_graph2 <- cloud_graph %>%
+cloud_graph2 <- clouds_onlysunlight %>%
     mutate(
         sky_group = case_when(
             sky_cover_08 <= 4 ~ "Clear–Scattered",
             sky_cover_08 >= 5 ~ "Broken–Overcast"),
-        sky_group = factor(sky_group, levels = c("Clear–Scattered", "Broken–Overcast")))
+        sky_group_factor = factor(sky_group, levels = c("Clear–Scattered", "Broken–Overcast")))
 
-# Ficure 2, grouped bar plot
-p2 <- ggplot(cloud_graph2, aes(x = sky_group, fill = sky_group)) +
+# Figure 2, grouped bar plot
+p2 <- ggplot(cloud_graph2, aes(x = sky_group_factor, fill = sky_group_factor)) +
     geom_bar(color = "black") +
     scale_fill_manual(
         values = c("Clear–Scattered" = "#08519C",
