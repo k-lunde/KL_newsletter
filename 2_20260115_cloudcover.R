@@ -1,4 +1,4 @@
-####-- Cloudcover - January 12th, 2026
+####-- Cloudcover
 
 # Clear environment if needed
 #rm(list=ls(all=TRUE))
