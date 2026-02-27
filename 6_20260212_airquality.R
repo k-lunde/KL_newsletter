@@ -13,14 +13,17 @@ options(scipen=999)
 
 ############################ Load Data #######################################
 
+# Data from 2020 EPA National Emissions Inventory
+# https://www.epa.gov/air-emissions-inventories/2020-nei-supporting-data-and-summaries
+
 # Read in data
-airq_road <- read.csv("data/onroad_5.csv")
-airq_nonroad <- read.csv("data/nonroad_5.csv")
-airq_facility <- read.csv("data/point_5.csv")
-airq_nonpoint <- read.csv("data/esg_cty_scc_23952.csv")
+airq_road <- read.csv("data/67_airq/onroad_5.csv")
+airq_nonroad <- read.csv("data/67_airq/nonroad_5.csv")
+airq_facility <- read.csv("data/67_airq/point_5.csv")
+airq_nonpoint <- read.csv("data/67_airq/esg_cty_scc_23952.csv")
 
 # Read in SCC table
-scc_table <- read.csv("data/SCCDownload-2026-0212-141720.csv") %>%
+scc_table <- read.csv("data/67_airq/SCCDownload-2026-0212-141720.csv") %>%
     rename(scc = SCC)
 
 # Filter for state and county
