@@ -1,0 +1,31 @@
+			
+Total Crude Oil Imports
+
+Regions:		
+East Coast (PADD 1)			
+Midwest (PADD 2)		
+Gulf Coast (PADD 3)
+Rocky Mountain (PADD 4)
+West Coast (PADD 5)
+
+Frequency: Annual
+Latest data for: 2025
+Release Date:	3/6/2026			
+				
+Excel File Names:
+pet_move_impcp_a2_r10_epc0_ip0_mbbl_a.xls
+pet_move_impcp_a2_r20_epc0_ip0_mbbl_a.xls
+pet_move_impcp_a2_r30_epc0_ip0_mbbl_a.xls
+pet_move_impcp_a2_r40_epc0_ip0_mbbl_a.xls
+pet_move_impcp_a2_r50_epc0_ip0_mbbl_a.xls
+
+Available from Web Page: 
+http://www.eia.gov/dnav/pet/pet_move_impcp_a2_r10_epc0_ip0_mbbl_a.htm
+http://www.eia.gov/dnav/pet/pet_move_impcp_a2_r20_epc0_ip0_mbbl_a.htm
+http://www.eia.gov/dnav/pet/pet_move_impcp_a2_r30_epc0_ip0_mbbl_a.htm
+http://www.eia.gov/dnav/pet/pet_move_impcp_a2_r40_epc0_ip0_mbbl_a.htm	
+http://www.eia.gov/dnav/pet/pet_move_impcp_a2_r50_epc0_ip0_mbbl_a.htm
+
+
+Source:	Energy Information Administration			
+For Help, Contact: infoctr@eia.gov (202) 586-8800
