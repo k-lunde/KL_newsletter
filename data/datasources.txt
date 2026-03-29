@@ -1,17 +1,26 @@
-			
-Total Crude Oil Imports
+# Data Sources
 
-Regions:		
-East Coast (PADD 1)			
-Midwest (PADD 2)		
-Gulf Coast (PADD 3)
-Rocky Mountain (PADD 4)
-West Coast (PADD 5)
 
-Frequency: Annual
-Latest data for: 2025
-Release Date:	3/6/2026			
-				
+## January 2026 - Cloud Cover (1-4)
+
+Used worldmet package to access NOAA Global Historical Climatology Network hourly
+https://openair-project.github.io/worldmet/index.html
+https://www.ncei.noaa.gov/products/global-historical-climatology-network-hourly
+
+
+## February 2026 - Air Quality (5-7)
+https://www.epa.gov/air-trends/air-quality-cities-and-counties
+https://www.epa.gov/air-emissions-inventories/2020-nei-supporting-data-and-summaries
+Aggregated Point, Onroad, Nonroad, Nonpoint emissions for all regions
+
+
+## March 2026 - Cars and Gas (8-10)
+
+Automotive Trends report:
+https://www.epa.gov/automotive-trends/explore-automotive-trends-data
+
+Crude Oil Import data - Energy Information Administration	
+
 Excel File Names:
 pet_move_impcp_a2_r10_epc0_ip0_mbbl_a.xls
 pet_move_impcp_a2_r20_epc0_ip0_mbbl_a.xls
@@ -27,5 +36,5 @@ http://www.eia.gov/dnav/pet/pet_move_impcp_a2_r40_epc0_ip0_mbbl_a.htm
 http://www.eia.gov/dnav/pet/pet_move_impcp_a2_r50_epc0_ip0_mbbl_a.htm
 
 
-Source:	Energy Information Administration			
-For Help, Contact: infoctr@eia.gov (202) 586-8800
+		
+
