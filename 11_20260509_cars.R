@@ -1,5 +1,5 @@
 ####--- All about cars
-# Car weight over time
+# Car size over time
 
 library(tidyverse)
 library(janitor)
